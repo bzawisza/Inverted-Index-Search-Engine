@@ -1,0 +1,22 @@
+{
+  "name": "600",
+  "version": "1.0.0",
+  "description": "",
+  "main": "crawler.js",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "simplecrawler": "^1.1.1",
+    "striptags": "^3.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/bzawisza/cs600-final.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/bzawisza/cs600-final#readme"
+}
