@@ -1,5 +1,6 @@
 const Trie = require('./trie');
 const Webcrawler = require('./crawler');
+const fs = require('fs');
 /*
 web crawler
     stores info in dictionary
@@ -40,5 +41,59 @@ const trie = new Trie();
 // console.log(trie.get('ab'))
 // console.log(trie.get('abc'))
 // console.log(trie.get('abd'))
-const crawler = new Webcrawler(trie);
 // trie.insert('domain', 'test');
+
+
+const search = (words) => {
+    if (words.length) {
+        let results = words.split(" ").map(word => {
+            return trie.get(word);
+        });
+        if (results.indexOf(undefined) > -1)
+            return "No results";
+        results = results.map(filename => {
+            const file = fs.readFileSync(filename);
+            const contents = JSON.parse(file);
+            return contents;
+        }).reduce((res1,res2)=>{
+            const intersection = {};
+            for (let key in res1) {
+                if (res2[key]) {
+                    intersection[key] = (res1[key] + res2[key])
+                }
+            }
+            return intersection;
+        });
+        return Object.keys(results).sort((a,b) => {
+            if (results[a] > results[b])
+                return -1;
+            if (results[a] < results[b])
+                return 1;
+            return 0;
+        });
+    } else {
+        return "No results";
+    }
+}
+
+const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question('Url:', (word) => {
+    const crawler = new Webcrawler(trie, word.length > 0 ? word : undefined);
+    const getInput = () => {
+        rl.question('Search: ', (word) => {
+            if (word == 'exit') {
+                rl.close();
+            } else {
+                console.log(search(word));
+                getInput();
+            }
+        });
+    }
+    getInput();
+});
+

@@ -77,7 +77,7 @@ class Trie {
         let node = this.root;
         let i = 0;
         let sameletters = 0;
-        while (i < key.length) {
+        while (node && i < key.length) {
             node = node.getNode(key[i]);
             sameletters = 0;
             while (node && key.charAt(i) && node.label.charAt(sameletters) == key.charAt(i)) {
@@ -85,7 +85,7 @@ class Trie {
                 sameletters++;
             }
         }
-        return node.value.get(key.substring(i-sameletters));
+        return node ? node.value.get(key.substring(i-sameletters)) : undefined;
     }
 
     graph() {

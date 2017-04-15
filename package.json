@@ -5,6 +5,7 @@
   "main": "crawler.js",
   "dependencies": {
     "cheerio": "^0.22.0",
+    "rmdir": "^1.2.0",
     "simplecrawler": "^1.1.1",
     "striptags": "^3.0.1"
   },
