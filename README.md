@@ -4,7 +4,7 @@
 
 ## Attached Files
 
-Project
+Project:
 
 - searchEngine.js
 -- Main File to run the search engine
@@ -14,11 +14,11 @@ Project
 - package.json
 - stopwords.json
 
-Testing
+Testing:
 
 - test.js
 
-Report
+Report:
 
 - README.md
 -- This file
@@ -35,7 +35,7 @@ Report
 - test.png
 -- png of the trie generated from the trie test
 
-Extra
+Extra:
 
 - .gitignore
 
