@@ -5,6 +5,7 @@
 ## Attached Files
 
 Project
+
 - searchEngine.js
 -- Main File to run the search engine
 - invertedIndex.js
@@ -14,9 +15,11 @@ Project
 - stopwords.json
 
 Testing
+
 - test.js
 
 Report
+
 - README.md
 -- This file
 - sampleRun.txt
@@ -33,6 +36,7 @@ Report
 -- png of the trie generated from the trie test
 
 Extra
+
 - .gitignore
 
 ## Details of approach to the problem
