@@ -1,7 +1,7 @@
 {
   "name": "600",
   "version": "1.0.0",
-  "description": "",
+  "description": "CS600 Final Project - Search Engine",
   "main": "crawler.js",
   "dependencies": {
     "cheerio": "^0.22.0",
@@ -11,7 +11,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node searchEngine.js",
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",

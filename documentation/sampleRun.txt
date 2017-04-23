@@ -1,0 +1,114 @@
+H:\600>npm start
+
+> 600@1.0.0 start H:\600
+> node searchEngine.js
+
+Url to start indexing (default: https://nodejs.org/api/documentation.html):
+Type exit to exit at any time, or press ctrl+c.
+Search: Done indexing the interwebs
+
+No results
+Search:
+No results
+Search: node
+[ 'https://nodejs.org/api/all.html',
+  'https://nodejs.org/api/process.html',
+  'https://nodejs.org/api/addons.html',
+  'https://nodejs.org/api/modules.html',
+  'https://nodejs.org/api/child_process.html',
+  'https://nodejs.org/api/repl.html',
+  'https://nodejs.org/api/errors.html',
+  'https://nodejs.org/api/stream.html',
+  'https://nodejs.org/api/cli.html',
+  'https://nodejs.org/api/debugger.html',
+  'https://nodejs.org/api/crypto.html',
+  'https://nodejs.org/api/http.html',
+  'https://nodejs.org/api/fs.html',
+  'https://nodejs.org/api/timers.html',
+  'https://nodejs.org/api/cluster.html',
+  'https://nodejs.org/api/buffer.html',
+  'https://nodejs.org/api/dgram.html',
+  'https://nodejs.org/api/globals.html',
+  'https://nodejs.org/api/deprecations.html',
+  'https://nodejs.org/api/console.html',
+  'https://nodejs.org/api/os.html',
+  'https://nodejs.org/api/documentation.html',
+  'https://nodejs.org/api/tracing.html',
+  'https://nodejs.org/api/tls.html',
+  'https://nodejs.org/api/tty.html',
+  'https://nodejs.org/en/',
+  'https://nodejs.org/api/path.html',
+  'https://nodejs.org/api/synopsis.html',
+  'https://nodejs.org/api/events.html',
+  'https://nodejs.org/api/readline.html',
+  'https://nodejs.org/api/v8.html',
+  'https://nodejs.org/api/net.html',
+  'https://nodejs.org/api/punycode.html',
+  'https://nodejs.org/api/dns.html',
+  'https://nodejs.org/api/zlib.html',
+  'https://nodejs.org/api/util.html',
+    'https://nodejs.org/api/https.html',
+  'https://nodejs.org/api/domain.html',
+  'https://nodejs.org/api/vm.html',
+  'https://nodejs.org/api/querystring.html',
+  'https://nodejs.org/api/url.html',
+  'https://nodejs.org/api/index.html',
+  'https://nodejs.org/api/assert.html',
+  'https://nodejs.org/api/string_decoder.html' ]
+Search: node html
+[ 'https://nodejs.org/api/all.html',
+  'https://nodejs.org/api/path.html',
+  'https://nodejs.org/api/crypto.html',
+  'https://nodejs.org/api/debugger.html',
+  'https://nodejs.org/api/http.html',
+  'https://nodejs.org/api/documentation.html',
+  'https://nodejs.org/api/tls.html',
+  'https://nodejs.org/api/zlib.html' ]
+Search: node asdf
+[ 'https://nodejs.org/api/all.html',
+  'https://nodejs.org/api/path.html' ]
+Search: node asdf file
+[ 'https://nodejs.org/api/all.html',
+  'https://nodejs.org/api/path.html' ]
+Search: node html path
+[ 'https://nodejs.org/api/all.html',
+  'https://nodejs.org/api/path.html',
+  'https://nodejs.org/api/http.html',
+  'https://nodejs.org/api/crypto.html',
+  'https://nodejs.org/api/debugger.html',
+  'https://nodejs.org/api/tls.html',
+  'https://nodejs.org/api/documentation.html',
+  'https://nodejs.org/api/zlib.html' ]
+Search: node html path asdf
+[ 'https://nodejs.org/api/all.html',
+  'https://nodejs.org/api/path.html' ]
+Search: node keys
+[ 'https://nodejs.org/api/all.html',
+  'https://nodejs.org/api/repl.html',
+  'https://nodejs.org/api/crypto.html',
+  'https://nodejs.org/api/tls.html',
+  'https://nodejs.org/api/http.html',
+  'https://nodejs.org/api/buffer.html',
+  'https://nodejs.org/api/https.html',
+  'https://nodejs.org/api/readline.html',
+  'https://nodejs.org/api/url.html',
+  'https://nodejs.org/api/querystring.html',
+  'https://nodejs.org/api/util.html' ]
+Search: node keys buffer
+[ 'https://nodejs.org/api/all.html',
+  'https://nodejs.org/api/buffer.html',
+  'https://nodejs.org/api/crypto.html',
+  'https://nodejs.org/api/tls.html',
+  'https://nodejs.org/api/repl.html',
+  'https://nodejs.org/api/http.html',
+  'https://nodejs.org/api/https.html',
+  'https://nodejs.org/api/util.html',
+  'https://nodejs.org/api/readline.html',
+  'https://nodejs.org/api/url.html',
+  'https://nodejs.org/api/querystring.html' ]
+Search: node keys util
+[ 'https://nodejs.org/api/all.html',
+  'https://nodejs.org/api/util.html',
+  'https://nodejs.org/api/repl.html' ]
+Search: invalidword
+No results
