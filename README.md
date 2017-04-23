@@ -93,7 +93,7 @@ Three libraries were used for the web crawler:
 
 Used to test basic functionality of the compressed trie.
 
-![image](./test.png)
+![image](./documentation/test.png)
 
 ```
 H:\600>npm test
@@ -139,6 +139,8 @@ p14 [label="{<f0>p|<f1>p,7}" shape=Mrecord];
 }
 ```
 ### Sample Run
+
+![image](./documentation/sampleRun.png)
 
 Edge cases tested:
 - Empty String
