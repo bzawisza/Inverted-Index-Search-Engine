@@ -106,7 +106,8 @@ H:\600>npm test
 > node test.js
 
 digraph {
-root0 [label="root"];ab2 [label="{<f0>ab|<f1>a,2,ab,2}" shape=Mrecord];
+root0 [label="root"];
+ab2 [label="{<f0>ab|<f1>a,2,ab,2}" shape=Mrecord];
         root0:f1 -> ab2:f0;
 c1 [label="{<f0>c|<f1>c,3}" shape=Mrecord];
         ab2:f1 -> c1:f0;
@@ -140,6 +141,14 @@ ck12 [label="{<f0>ck|<f1>ck,6}" shape=Mrecord];
         to13:f1 -> ck12:f0;
 p14 [label="{<f0>p|<f1>p,7}" shape=Mrecord];
         to13:f1 -> p14:f0;
+t21 [label="{<f0>t|<f1>}" shape=Mrecord];
+        root0:f1 -> t21:f0;
+here18 [label="{<f0>here|<f1>here,1}" shape=Mrecord];
+        t21:f1 -> here18:f0;
+hat20 [label="{<f0>hat|<f1>hat,2}" shape=Mrecord];
+        t21:f1 -> hat20:f0;
+ap22 [label="{<f0>ap|<f1>ap,3}" shape=Mrecord];
+        t21:f1 -> ap22:f0;
 }
 ```
 ### Sample Run
@@ -210,13 +219,13 @@ Search: node
   'https://nodejs.org/api/dns.html',
   'https://nodejs.org/api/zlib.html',
   'https://nodejs.org/api/util.html',
-    'https://nodejs.org/api/https.html',
+  'https://nodejs.org/api/https.html',
   'https://nodejs.org/api/domain.html',
   'https://nodejs.org/api/vm.html',
   'https://nodejs.org/api/querystring.html',
   'https://nodejs.org/api/url.html',
   'https://nodejs.org/api/index.html',
-  'https://nodejs.org/api/assert.html',
+    'https://nodejs.org/api/assert.html',
   'https://nodejs.org/api/string_decoder.html' ]
 Search: node html
 [ 'https://nodejs.org/api/all.html',
@@ -257,7 +266,7 @@ Search: node keys
   'https://nodejs.org/api/url.html',
   'https://nodejs.org/api/querystring.html',
   'https://nodejs.org/api/util.html' ]
-Search: node keys buffer
+  Search: node keys buffer
 [ 'https://nodejs.org/api/all.html',
   'https://nodejs.org/api/buffer.html',
   'https://nodejs.org/api/crypto.html',
@@ -275,6 +284,7 @@ Search: node keys util
   'https://nodejs.org/api/repl.html' ]
 Search: invalidword
 No results
+Search:
 ```
 
 ## Compile and Run

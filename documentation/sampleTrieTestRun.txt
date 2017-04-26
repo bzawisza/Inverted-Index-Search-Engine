@@ -39,4 +39,12 @@ ck12 [label="{<f0>ck|<f1>ck,6}" shape=Mrecord];
         to13:f1 -> ck12:f0;
 p14 [label="{<f0>p|<f1>p,7}" shape=Mrecord];
         to13:f1 -> p14:f0;
+t21 [label="{<f0>t|<f1>}" shape=Mrecord];
+        root0:f1 -> t21:f0;
+here18 [label="{<f0>here|<f1>here,1}" shape=Mrecord];
+        t21:f1 -> here18:f0;
+hat20 [label="{<f0>hat|<f1>hat,2}" shape=Mrecord];
+        t21:f1 -> hat20:f0;
+ap22 [label="{<f0>ap|<f1>ap,3}" shape=Mrecord];
+        t21:f1 -> ap22:f0;
 }
