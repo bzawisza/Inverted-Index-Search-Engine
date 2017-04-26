@@ -283,6 +283,10 @@ No results
 
 Latest version of node
 
+------------ **MAKE SURE YOU RUN:** ------------
+
+```npm install```
+
 ### Running
 
 `npm start`
