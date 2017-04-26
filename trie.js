@@ -33,17 +33,17 @@ class Trie {
                 i++;
                 sameletters++;
             }
-            if (!node) { // parent doesn't have this child - insert a new child node
+            if (!node) { // current node doesn't exist -- insert new node to parentNode
                 const label = word.substring(i, word.length);
                 parentNode.children.set(label, new Node(label, value));
                 return;
-            } else if (node.children.size && sameletters == node.label.length) { // go to the next child node
+            } else if (node.children.size && sameletters == node.label.length) { // there's subchildren and we went through all the letters
                 parentNode = node;
                 node = node.getNode(letter());
-            } else if (sameletters < node.label.length && word.length - i == 0) { // a word in trie exists that exists that is longer than this word. This word is a substring. Insert the value here.
+            } else if (sameletters < node.label.length && word.length - i == 0) { // a word in trie exists that exists that is longer than this word. This word is a substring of that word. eg: testicle is in the trie. test is being inserted
                 node.value.set(node.label.substring(0, sameletters), value);
                 return;
-            } else if ((sameletters < node.label.length) && word.length - i != 0) { // a substring of the word we want to insert is in a substring of the label we are looking at. We need to split this node.
+            } else if ((sameletters < node.label.length) && word.length - i != 0) { // a substring of the word we want to insert is in a substring of the label we are looking at. We need to split this node and insert. ex: trie is: s-top and stock is being inserted
                 const hadChildren = (node.children.size != 0);
 
                 parentNode.children.delete(node.label);
@@ -80,7 +80,7 @@ class Trie {
                     }
                 });
                 return;
-            } else if (word.length - i != 0) { // new word is longer and there are no children - replace the node were looking at with the new word
+            } else if (word.length - i != 0) { // // all the letters in the node we're looking at are a substring of our word and there are no children. eg: test is in the trie. testicle is being inserted. 
                 parentNode.children.delete(node.label);
                 const currentEndLabel = word.substring(i - sameletters, word.length); // old
                 node.label = currentEndLabel;
