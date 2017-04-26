@@ -44,18 +44,31 @@ class Trie {
                 node.value.set(node.label.substring(0, sameletters), value);
                 return;
             } else if ((sameletters < node.label.length) && word.length - i != 0) { // a substring of the word we want to insert is in a substring of the label we are looking at. We need to split this node.
+                const hadChildren = (node.children.size != 0);
+
                 parentNode.children.delete(node.label);
                 const replacementNode = new Node(node.label.substring(0, sameletters));
                 parentNode.children.set(replacementNode.label, replacementNode);
 
-                const currentEndLabel = node.label.substring(sameletters, node.label.length); // old
-                node.label = currentEndLabel;
-                replacementNode.children.set(currentEndLabel, node);
-
-                const newEndLabel = word.substring(i, word.length); // new
+                const currentEndLabel = node.label.substring(sameletters, node.label.length); // get the remaining letters of the old node
+                if (!hadChildren) { // map a new child node
+                    node.label = currentEndLabel;
+                    replacementNode.children.set(currentEndLabel, node);
+                } else {
+                    node.children.forEach(childNode => { // add the current child nodes
+                        childNode.label = currentEndLabel + childNode.label;
+                        replacementNode.children.set(childNode.label, childNode);
+                        // update values mappings
+                        const entries = [...childNode.value.entries()];
+                        entries.forEach(([key]) => childNode.value.delete(key));
+                        entries.forEach(([key, value]) => childNode.value.set(currentEndLabel+key, value));
+                    })
+                }
+                
+                const newEndLabel = word.substring(i, word.length); // new node
                 replacementNode.children.set(newEndLabel, new Node(newEndLabel, value));
 
-                // update values
+                // update values mappings
                 const entries = [...node.value.entries()];
                 entries.forEach(([key]) => node.value.delete(key));
                 entries.forEach(([key, value]) => {

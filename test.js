@@ -30,5 +30,10 @@ trie.insert('stop', 7);
 trie.insert('bell', 8);
 trie.insert('bett', 9);
 
+// another edge case
+trie.insert('there', 1);
+trie.insert('that', 2);
+trie.insert('tap', 3);
+
 // print out graphviz syntax
 console.log(trie.graph());
