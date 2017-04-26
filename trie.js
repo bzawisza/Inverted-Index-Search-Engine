@@ -101,15 +101,13 @@ class Trie {
     graph() {
         let str = 'digraph {\nroot0 [label="root"];\n';
         const _gv_helper = node => {
-            const parent = node || this.root;
-            const cs = [...parent.children.values()];
-            cs.forEach(c => {
+            [...node.children.values()].forEach(c => {
                 str += `${c.label}${c.id} [label="{<f0>${c.label}|<f1>${[...c.value]}}" shape=Mrecord];\n`
-                str += `\t${parent.label ? parent.label : 'root'}${parent.id}:f1 -> ${c.label}${c.id}:f0;\n`;
+                str += `\t${node.label ? node.label : 'root'}${node.id}:f1 -> ${c.label}${c.id}:f0;\n`;
                 _gv_helper(c, str);
             });
         }
-        _gv_helper(null);
+        _gv_helper(this.root);
         str += '}';
         return str;
     }
