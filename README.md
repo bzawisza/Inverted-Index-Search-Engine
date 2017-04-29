@@ -36,6 +36,10 @@ Report:
 -- png of the trie generated from the trie test
 - input.txt
 -- search words used to test and show sample run
+- node.png
+-- node data structure
+- occurrenceList.png.png
+-- occurance list data structure
 
 Extra:
 
@@ -61,12 +65,20 @@ Insert and get methods take O(1) assuming that string lengths are constant.
 
 The value of a node uses a map. This is because 'a' and 'ab' may be stored in the same exact node 'ab' if the node 'ab' does not have any children.
 
+An example of a compressed trie is:
+![image](./documentation/test.png)
+
+A compressed trie is made up of several nodes:
+![image](./documentation/node.png)
+
 ### Occurance List
 
 Stored in a file in ./invertedFiles. This file contains a map of (key, values).
 
 Key: The website url
 Value: A ranking for that website for this particular words.
+
+![image](./documentation/occurrenceList.png)
 
 ### Ranking
 
