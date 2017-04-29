@@ -24,9 +24,9 @@ Report:
 -- This file
 - sampleRun.output.txt
 -- sample output from stdout.
-- graphwiz.gv
--- graphwiz generation for viewing the trie
-- graphwiz.pdf
+- graphviz.gv
+-- graphviz generation for viewing the trie
+- graphviz.pdf
 -- trie in pdf format for viewing
 - sampleRun.png
 -- cropping of the trie for viewing
@@ -39,7 +39,7 @@ Report:
 - node.png
 -- node data structure
 - occurrenceList.png
--- occurance list data structure
+-- occurrence list data structure
 
 Extra:
 
@@ -55,7 +55,7 @@ Stores Key-Value pairs for easy lookup. The inverted index is implemented using 
 
 Key: The **Index Term** or word / part of a word that is used when searching
 
-Value: location of the **Occurence List**. In this case, the relative path that stores it. Since this is a simplified search engine, we are only storing one value. For a larger search engine, multiple files may be used to store occurence lists and may be partitioned on multiple machines.
+Value: location of the **Occurrence List**. In this case, the relative path that stores it. Since this is a simplified search engine, we are only storing one value. For a larger search engine, multiple files may be used to store occurrence lists and may be partitioned on multiple machines.
 
 #### Compressed Trie
 
@@ -71,7 +71,7 @@ An example of a compressed trie is:
 A compressed trie is made up of several nodes:
 ![image](./documentation/node.png)
 
-### Occurance List
+### Occurrence List
 
 Stored in a file in ./invertedFiles. This file contains a map of (key, values).
 
@@ -86,9 +86,9 @@ Websites are given a score based off of the number of times a word appears in th
 
 ### Searching the inverted index
 
-1. Each word is found in the inverted index to obtain the location of the occurance list.
-2. The occurance list file is opened and map (url, score) is read into memory.
-3. Each occurance list is reduced into one result by taking the intersection of each key. The values (scores) are added together.
+1. Each word is found in the inverted index to obtain the location of the occurrence list.
+2. The occurrence list file is opened and map (url, score) is read into memory.
+3. Each occurrence list is reduced into one result by taking the intersection of each key. The values (scores) are added together.
 4. Finally, the urls are sorted by score in descending order, and the results are returned to the user/
 
 ### Web Crawler
@@ -101,7 +101,7 @@ Three libraries were used for the web crawler:
 - striptags
     - https://www.npmjs.com/package/striptags
     - Used to strip any tags in the page that was visited by the crawler
-- simplecrawler
+- cheerio
     - https://github.com/cheeriojs/cheerio
     - Used to easily go through the DOM of a website visited by the crawler
 
@@ -194,9 +194,9 @@ Search edge cases tested. The words used can be found in .documentation/input.tx
 - Two words and then narrowing results with 3 words
 - Word that will have no results
 
-A graphwiz file and pdf of the generated trie are located in the documentation folder.
-graphwiz.gv
-graphwiz.pdf
+A graphviz file and pdf of the generated trie are located in the documentation folder.
+graphviz.gv
+graphviz.pdf
 
 A cropping of the generated trie is shown in: sampleRun.png
 
