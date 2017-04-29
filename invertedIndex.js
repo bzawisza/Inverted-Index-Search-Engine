@@ -48,6 +48,7 @@ class InvertedIndex {
 
     // save graphwiz file for viewing the results
     saveGV() {
+        // console.log('Writing gv file to ./documentation/graphviz.gv');
         fs.writeFileSync('./documentation/graphviz.gv', this.trie.graph());
     }
 }

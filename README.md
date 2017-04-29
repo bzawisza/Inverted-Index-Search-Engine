@@ -22,7 +22,7 @@ Report:
 
 - README.md
 -- This file
-- sampleRun.txt
+- sampleRun.output.txt
 -- sample output from stdout.
 - graphwiz.gv
 -- graphwiz generation for viewing the trie
@@ -30,10 +30,12 @@ Report:
 -- trie in pdf format for viewing
 - sampleRun.png
 -- cropping of the trie for viewing
-- sampleTrieTestRun.txt
+- test.output.txt
 -- sample output form sdtout when running sample test
 - test.png
 -- png of the trie generated from the trie test
+- input.txt
+-- search words used to test and show sample run
 
 Extra:
 
@@ -91,6 +93,8 @@ Three libraries were used for the web crawler:
     - https://github.com/cheeriojs/cheerio
     - Used to easily go through the DOM of a website visited by the crawler
 
+The crawler was configured to only go 2 pages deep.
+
 ## Output from sample run
 
 ### Sample Trie Test Run
@@ -100,62 +104,77 @@ Used to test basic functionality of the compressed trie.
 ![image](./documentation/test.png)
 
 ```
-H:\600>npm test
-
 > 600@1.0.0 test H:\600
-> node test.js
-
+> node test.js > ./documentation/test.output.txt ; echo 'Output is located in ./documentation/test.output.txt'
 digraph {
-root0 [label="root"];
-ab2 [label="{<f0>ab|<f1>a,2,ab,2}" shape=Mrecord];
-        root0:f1 -> ab2:f0;
-c1 [label="{<f0>c|<f1>c,3}" shape=Mrecord];
-        ab2:f1 -> c1:f0;
-d3 [label="{<f0>d|<f1>d,4}" shape=Mrecord];
-        ab2:f1 -> d3:f0;
-b5 [label="{<f0>b|<f1>}" shape=Mrecord];
-        root0:f1 -> b5:f0;
-u7 [label="{<f0>u|<f1>}" shape=Mrecord];
-        b5:f1 -> u7:f0;
-ll6 [label="{<f0>ll|<f1>ll,3}" shape=Mrecord];
-        u7:f1 -> ll6:f0;
-y8 [label="{<f0>y|<f1>y,4}" shape=Mrecord];
-        u7:f1 -> y8:f0;
-id9 [label="{<f0>id|<f1>id,2}" shape=Mrecord];
-        b5:f1 -> id9:f0;
-e15 [label="{<f0>e|<f1>}" shape=Mrecord];
-        b5:f1 -> e15:f0;
-ar4 [label="{<f0>ar|<f1>ar,1}" shape=Mrecord];
-        e15:f1 -> ar4:f0;
-ll16 [label="{<f0>ll|<f1>ll,8}" shape=Mrecord];
-        e15:f1 -> ll16:f0;
-tt17 [label="{<f0>tt|<f1>tt,9}" shape=Mrecord];
-        e15:f1 -> tt17:f0;
-s11 [label="{<f0>s|<f1>}" shape=Mrecord];
-        root0:f1 -> s11:f0;
-ell10 [label="{<f0>ell|<f1>ell,5}" shape=Mrecord];
-        s11:f1 -> ell10:f0;
-to13 [label="{<f0>to|<f1>}" shape=Mrecord];
-        s11:f1 -> to13:f0;
-ck12 [label="{<f0>ck|<f1>ck,6}" shape=Mrecord];
-        to13:f1 -> ck12:f0;
-p14 [label="{<f0>p|<f1>p,7}" shape=Mrecord];
-        to13:f1 -> p14:f0;
-t21 [label="{<f0>t|<f1>}" shape=Mrecord];
-        root0:f1 -> t21:f0;
-here18 [label="{<f0>here|<f1>here,1}" shape=Mrecord];
-        t21:f1 -> here18:f0;
-hat20 [label="{<f0>hat|<f1>hat,2}" shape=Mrecord];
-        t21:f1 -> hat20:f0;
-ap22 [label="{<f0>ap|<f1>ap,3}" shape=Mrecord];
-        t21:f1 -> ap22:f0;
+xroot0 [label="{<f0>root|<f1>}" shape=Mrecord];
+xab2 [label="{<f0>ab|<f1>a,2,ab,2}" shape=Mrecord];
+	xroot0:f1 -> xab2:f0;
+xc1 [label="{<f0>c|<f1>c,3}" shape=Mrecord];
+	xab2:f1 -> xc1:f0;
+xd3 [label="{<f0>d|<f1>d,4}" shape=Mrecord];
+	xab2:f1 -> xd3:f0;
+xb5 [label="{<f0>b|<f1>}" shape=Mrecord];
+	xroot0:f1 -> xb5:f0;
+xu7 [label="{<f0>u|<f1>}" shape=Mrecord];
+	xb5:f1 -> xu7:f0;
+xll6 [label="{<f0>ll|<f1>ll,3}" shape=Mrecord];
+	xu7:f1 -> xll6:f0;
+xy8 [label="{<f0>y|<f1>y,4}" shape=Mrecord];
+	xu7:f1 -> xy8:f0;
+xid9 [label="{<f0>id|<f1>id,2}" shape=Mrecord];
+	xb5:f1 -> xid9:f0;
+xe15 [label="{<f0>e|<f1>}" shape=Mrecord];
+	xb5:f1 -> xe15:f0;
+xar4 [label="{<f0>ar|<f1>ar,1}" shape=Mrecord];
+	xe15:f1 -> xar4:f0;
+xll16 [label="{<f0>ll|<f1>ll,8}" shape=Mrecord];
+	xe15:f1 -> xll16:f0;
+xtt17 [label="{<f0>tt|<f1>tt,9}" shape=Mrecord];
+	xe15:f1 -> xtt17:f0;
+xs11 [label="{<f0>s|<f1>}" shape=Mrecord];
+	xroot0:f1 -> xs11:f0;
+xell10 [label="{<f0>ell|<f1>ell,5}" shape=Mrecord];
+	xs11:f1 -> xell10:f0;
+xto13 [label="{<f0>to|<f1>}" shape=Mrecord];
+	xs11:f1 -> xto13:f0;
+xck12 [label="{<f0>ck|<f1>ck,6}" shape=Mrecord];
+	xto13:f1 -> xck12:f0;
+xp14 [label="{<f0>p|<f1>p,7}" shape=Mrecord];
+	xto13:f1 -> xp14:f0;
+xt21 [label="{<f0>t|<f1>}" shape=Mrecord];
+	xroot0:f1 -> xt21:f0;
+xap22 [label="{<f0>ap|<f1>ap,3}" shape=Mrecord];
+	xt21:f1 -> xap22:f0;
+xhe23 [label="{<f0>he|<f1>he,2}" shape=Mrecord];
+	xt21:f1 -> xhe23:f0;
+xre18 [label="{<f0>re|<f1>re,1}" shape=Mrecord];
+	xhe23:f1 -> xre18:f0;
+xy24 [label="{<f0>y|<f1>y,3}" shape=Mrecord];
+	xhe23:f1 -> xy24:f0;
+xh25 [label="{<f0>h|<f1>}" shape=Mrecord];
+	xt21:f1 -> xh25:f0;
+xat20 [label="{<f0>at|<f1>at,2}" shape=Mrecord];
+	xh25:f1 -> xat20:f0;
+xis26 [label="{<f0>is|<f1>is,4}" shape=Mrecord];
+	xh25:f1 -> xis26:f0;
+xx28 [label="{<f0>x|<f1>x,8}" shape=Mrecord];
+	xroot0:f1 -> xx28:f0;
+xpple27 [label="{<f0>pple|<f1>pple,5}" shape=Mrecord];
+	xx28:f1 -> xpple27:f0;
+xm30 [label="{<f0>m|<f1>m,9}" shape=Mrecord];
+	xx28:f1 -> xm30:f0;
+xerica29 [label="{<f0>erica|<f1>erica,6}" shape=Mrecord];
+	xm30:f1 -> xerica29:f0;
+xple31 [label="{<f0>ple|<f1>ple,7}" shape=Mrecord];
+	xm30:f1 -> xple31:f0;
 }
 ```
 ### Sample Run
 
 ![image](./documentation/sampleRun.png)
 
-Edge cases tested:
+Search edge cases tested. The words used can be found in .documentation/input.txt:
 - Empty String
 - One word
 - Two words
@@ -217,7 +236,7 @@ Search: node
   'https://nodejs.org/api/net.html',
   'https://nodejs.org/api/punycode.html',
   'https://nodejs.org/api/dns.html',
-  'https://nodejs.org/api/zlib.html',
+    'https://nodejs.org/api/zlib.html',
   'https://nodejs.org/api/util.html',
   'https://nodejs.org/api/https.html',
   'https://nodejs.org/api/domain.html',
@@ -225,7 +244,7 @@ Search: node
   'https://nodejs.org/api/querystring.html',
   'https://nodejs.org/api/url.html',
   'https://nodejs.org/api/index.html',
-    'https://nodejs.org/api/assert.html',
+  'https://nodejs.org/api/assert.html',
   'https://nodejs.org/api/string_decoder.html' ]
 Search: node html
 [ 'https://nodejs.org/api/all.html',
@@ -266,7 +285,7 @@ Search: node keys
   'https://nodejs.org/api/url.html',
   'https://nodejs.org/api/querystring.html',
   'https://nodejs.org/api/util.html' ]
-  Search: node keys buffer
+Search: node keys buffer
 [ 'https://nodejs.org/api/all.html',
   'https://nodejs.org/api/buffer.html',
   'https://nodejs.org/api/crypto.html',
@@ -284,7 +303,7 @@ Search: node keys util
   'https://nodejs.org/api/repl.html' ]
 Search: invalidword
 No results
-Search:
+Search: exit
 ```
 
 ## Compile and Run

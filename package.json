@@ -12,7 +12,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "node searchEngine.js",
-    "test": "node test.js"
+    "test": "node test.js > ./documentation/test.output.txt ; echo 'Output is located in ./documentation/test.output.txt' "
   },
   "repository": {
     "type": "git",

@@ -45,7 +45,7 @@ Search: node
   'https://nodejs.org/api/net.html',
   'https://nodejs.org/api/punycode.html',
   'https://nodejs.org/api/dns.html',
-  'https://nodejs.org/api/zlib.html',
+    'https://nodejs.org/api/zlib.html',
   'https://nodejs.org/api/util.html',
   'https://nodejs.org/api/https.html',
   'https://nodejs.org/api/domain.html',
@@ -53,7 +53,7 @@ Search: node
   'https://nodejs.org/api/querystring.html',
   'https://nodejs.org/api/url.html',
   'https://nodejs.org/api/index.html',
-    'https://nodejs.org/api/assert.html',
+  'https://nodejs.org/api/assert.html',
   'https://nodejs.org/api/string_decoder.html' ]
 Search: node html
 [ 'https://nodejs.org/api/all.html',
@@ -94,7 +94,7 @@ Search: node keys
   'https://nodejs.org/api/url.html',
   'https://nodejs.org/api/querystring.html',
   'https://nodejs.org/api/util.html' ]
-  Search: node keys buffer
+Search: node keys buffer
 [ 'https://nodejs.org/api/all.html',
   'https://nodejs.org/api/buffer.html',
   'https://nodejs.org/api/crypto.html',
@@ -112,4 +112,4 @@ Search: node keys util
   'https://nodejs.org/api/repl.html' ]
 Search: invalidword
 No results
-Search:
+Search: exit

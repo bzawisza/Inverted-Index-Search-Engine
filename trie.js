@@ -37,12 +37,12 @@ class Trie {
                 const label = word.substring(i, word.length);
                 parentNode.children.set(label, new Node(label, value));
                 return;
+            } else if (sameletters <= node.label.length && word.length - i == 0) { // a word in trie exists that exists that is longer than this word. This word is a substring of that word. eg: testicle is in the trie. test is being inserted
+                node.value.set(node.label.substring(0, sameletters), value);
+                return;
             } else if (node.children.size && sameletters == node.label.length) { // there's subchildren and we went through all the letters
                 parentNode = node;
                 node = node.getNode(letter());
-            } else if (sameletters < node.label.length && word.length - i == 0) { // a word in trie exists that exists that is longer than this word. This word is a substring of that word. eg: testicle is in the trie. test is being inserted
-                node.value.set(node.label.substring(0, sameletters), value);
-                return;
             } else if ((sameletters < node.label.length) && word.length - i != 0) { // a substring of the word we want to insert is in a substring of the label we are looking at. We need to split this node and insert. ex: trie is: s-top and stock is being inserted
                 const hadChildren = (node.children.size != 0);
 
@@ -112,11 +112,11 @@ class Trie {
 
     // nice method to generate graphwiz for viewing the trie :)
     graph() {
-        let str = 'digraph {\nroot0 [label="root"];\n';
+        let str = 'digraph {\nxroot0 [label="{<f0>root|<f1>}" shape=Mrecord];\n';
         const _gv_helper = node => {
             [...node.children.values()].forEach(c => {
-                str += `${c.label}${c.id} [label="{<f0>${c.label}|<f1>${[...c.value]}}" shape=Mrecord];\n`
-                str += `\t${node.label ? node.label : 'root'}${node.id}:f1 -> ${c.label}${c.id}:f0;\n`;
+                str += `x${c.label}${c.id} [label="{<f0>${c.label}|<f1>${[...c.value]}}" shape=Mrecord];\n`
+                str += `\tx${node.label ? node.label : 'root'}${node.id}:f1 -> x${c.label}${c.id}:f0;\n`;
                 _gv_helper(c, str);
             });
         }
