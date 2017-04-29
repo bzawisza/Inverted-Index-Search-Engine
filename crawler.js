@@ -53,7 +53,7 @@ class Webcrawler {
 
         // Method that runs once we finish indexing
         crawler.on('complete', () => {
-            invertedIndex.saveGV();
+            // invertedIndex.saveGV();
             console.log('Done indexing the interwebs');
         });
 
