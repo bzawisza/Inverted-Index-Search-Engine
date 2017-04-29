@@ -38,7 +38,7 @@ Report:
 -- search words used to test and show sample run
 - node.png
 -- node data structure
-- occurrenceList.png.png
+- occurrenceList.png
 -- occurance list data structure
 
 Extra:
