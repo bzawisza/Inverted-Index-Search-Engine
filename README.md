@@ -1,4 +1,4 @@
-# CS600 Final Project - Search Engine
+# Search Engine
 
 [TOC]
 

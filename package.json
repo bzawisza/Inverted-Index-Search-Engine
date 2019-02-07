@@ -1,7 +1,7 @@
 {
-  "name": "600",
+  "name": "SearchEngine",
   "version": "1.0.0",
-  "description": "CS600 Final Project - Search Engine",
+  "description": "Inverted Index - Search Engine",
   "main": "crawler.js",
   "dependencies": {
     "cheerio": "^0.22.0",
@@ -16,9 +16,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/bzawisza/cs600-final.git"
+    "url": ""
   },
-  "author": "",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/bzawisza/cs600-final#readme"
+  "author": "Brian Zawisza",
+  "license": "",
+  "homepage": ""
 }
